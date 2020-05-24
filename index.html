@@ -1,0 +1,18 @@
+<html>
+  <body>
+    <p>Your Lightning invoice:</p>
+    <canvas id="qr"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+      (function() {
+        // this is the payment request returned by the Strike API, which has then been sent to your customer's browser by your own backend.
+        const payment_request = 'lnbc10u1p0v5v0tpp5dczcjtyfxftccgr3tzrs85h3g7wr6j2alltv5atf0hmunsu2pm3qdqhv4uxzmtsd3jjqcmgv9exwegcqp2xqrrss9qy9qsqsp55hr7gwaevkwe6gue30fq8nj6t8jy0n8sj0m0t2wht4hw2jad69uscxxpxxpnkgkj5xw5elhygnn3g76yhrj0cxussdhtd2e077jtnme3ceard00ctnspq3g580as2djqwvyrkuuezpd8frgcrm8nkqrwl2sqcd3e0s'
+        // builds and displays the QR code
+        new QRious({
+          element: document.getElementById('qr'),
+          value: payment_request
+        });
+      })();
+    </script>
+  </body>
+</html>
